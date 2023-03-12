@@ -28,6 +28,11 @@ namespace RedMango_API.Services
             return blobClient.Uri.AbsoluteUri;
         }
 
+        public Task<string> UpdateBlob(string blobName, string containerName, IFormFile file)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<string> UploadBlob(string blobName, string containerName, IFormFile file)
         {
             BlobContainerClient blobContainerClient = _blobClient.GetBlobContainerClient(containerName);
@@ -42,6 +47,11 @@ namespace RedMango_API.Services
                 return await GetBlob(blobName, containerName);
             }
             return "";
+        }
+
+        Task<string> IBlobService.DeleteBlob(string blobName, string containerName)
+        {
+            throw new NotImplementedException();
         }
     }
 }
